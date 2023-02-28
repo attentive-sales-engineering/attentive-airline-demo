@@ -23,29 +23,29 @@ $(document).ready(function () {
   const cityElement = document.querySelector('#city')
 
   //sets default check-in to today + 7 days
-  let checkInDate = new Date()
-  checkInDate.setDate(checkInDate.getDate() + 7)
-  let checkIn =
-    localStorage.getItem('checkIn') || checkInDate.toLocaleDateString()
+  let departureDate = new Date()
+  departureDate.setDate(departureDate.getDate() + 7)
+  let departure =
+    localStorage.getItem('departure') || departureDate.toLocaleDateString()
 
-  // console.log('get checkIn:', checkIn)
-  const checkInElement = document.querySelector('#checkIn')
+  // console.log('get departure:', departure)
+  const departureElement = document.querySelector('#departure')
 
   //sets default check-in to today + 8 days
-  let checkOutDate = new Date()
-  checkOutDate.setDate(checkOutDate.getDate() + 8)
-  let checkOut =
-    localStorage.getItem('checkOut') || checkOutDate.toLocaleDateString()
-  // console.log('get checkOut:', checkOut)
-  const checkOutElement = document.querySelector('#checkOut')
+  let returnDate = new Date()
+  returnDate.setDate(returnDate.getDate() + 8)
+  let return =
+    localStorage.getItem('return') || returnDate.toLocaleDateString()
+  // console.log('get return:', return)
+  const returnElement = document.querySelector('#return')
 
-  let adults = localStorage.getItem('adults') || '1 Adult'
-  // console.log('get adults:', adults)
-  const adultsElement = document.querySelector('#adults')
+  let passengers = localStorage.getItem('passengers') || '1 Passenger'
+  // console.log('get passengers:', passengers)
+  const passengersElement = document.querySelector('#passengers')
 
-  let children = localStorage.getItem('children') || ''
-  // console.log('get children:', children)
-  const childrenElement = document.querySelector('#children')
+  let roundtrip = localStorage.getItem('roundtrip') || ''
+  // console.log('get roundtrip:', roundtrip)
+  const roundtripElement = document.querySelector('#roundtrip')
 
   // Event listener to process messages from sign-up unit via postMessage()
   window.addEventListener('message', e => {
@@ -108,10 +108,10 @@ $(document).ready(function () {
     if (emailElement) emailElement.value = email
     if (phoneElement) phoneElement.value = phone
     if (cityElement) cityElement.value = city
-    if (checkInElement) checkInElement.value = checkIn
-    if (checkOutElement) checkOutElement.value = checkOut
-    if (adultsElement) adultsElement.value = adults
-    if (childrenElement) childrenElement.value = children
+    if (departureElement) departureElement.value = departure
+    if (returnElement) returnElement.value = return
+    if (passengersElement) passengersElement.value = passengers
+    if (roundtripElement) roundtripElement.value = roundtrip
   }
 
   // Clicked submit button
@@ -122,10 +122,10 @@ $(document).ready(function () {
     ) {
       console.log('SET LOCAL STORAGE')
       localStorage.setItem('city', cityElement.value)
-      localStorage.setItem('checkIn', checkInElement.value)
-      localStorage.setItem('checkOut', checkOutElement.value)
-      localStorage.setItem('adults', adultsElement.value)
-      localStorage.setItem('children', childrenElement.value)
+      localStorage.setItem('departure', departureElement.value)
+      localStorage.setItem('return', returnElement.value)
+      localStorage.setItem('passengers', passengersElement.value)
+      localStorage.setItem('roundtrip', roundtripElement.value)
       // ADD TO CART SDK
       console.log('BOOK NOW BUTTON -> ADD TO CART SDK')
       window.attentive.analytics.addToCart({

@@ -45,9 +45,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="rooms.html">Book</a></li>                    <li class="nav-item"><a class="nav-link" href="coming-soon.html">My Trips</a></li>
+                    <li class="nav-item"><a class="nav-link" href="destinations.html">Book</a></li>                    <li class="nav-item"><a class="nav-link" href="coming-soon.html">My Trips</a></li>
                     <!-- Added Destinations Tab -->
-                    <li class="nav-item dropdown"> <span class="nav-link"> Our Destinations <i
+                    <li class="nav-item dropdown"><span class="nav-link"> Our Destinations <i
                                 class="ti-angle-down"></i></span>
                         <ul class="dropdown-menu last">
                             <li class="dropdown-item active"><a href="newyork.html">New York</a></li>
@@ -147,10 +147,10 @@
                         <div class="select1_wrapper">
                             <label>Round Trip</label>
                             <div class="select1_inner">
-                                <select id="adults" class="select2 select" style="width: 100%">
+                                <select id="passengers" class="select2 select" style="width: 100%">
                                     <option value="">Round Trip</option>
-                                    <option value="1 Adult">Round Trip</option>
-                                    <option value="2 Adults">One Way</option>
+                                    <option value="1 Passenger">Round Trip</option>
+                                    <option value="2 Passengers">One Way</option>
                                 </select>
                             </div>
                         </div>
@@ -159,7 +159,7 @@
                         <div class="input1_wrapper">
                             <label>Departure</label>
                             <div class="input1_inner">
-                                <input id="checkIn" type="text" class="form-control input datepicker"
+                                <input id="departure" type="text" class="form-control input datepicker"
                                     placeholder="Departure">
                             </div>
                         </div>
@@ -168,7 +168,7 @@
                         <div class="input1_wrapper">
                             <label>Return</label>
                             <div class="input1_inner">
-                                <input id="checkOut" type="text" class="form-control input datepicker"
+                                <input id="return" type="text" class="form-control input datepicker"
                                     placeholder="Return">
                             </div>
                         </div>
@@ -207,12 +207,12 @@
                         <div class="select1_wrapper">
                             <label>Passengers</label>
                             <div class="select1_inner">
-                                <select id="adults" class="select2 select" style="width: 100%">
+                                <select id="passengers" class="select2 select" style="width: 100%">
                                     <option value="">Passengers</option>
-                                    <option value="1 Adult">1</option>
-                                    <option value="2 Adults">2</option>
-                                    <option value="3 Adults">3</option>
-                                    <option value="4 Adults">4</option>
+                                    <option value="1 Passenger">1</option>
+                                    <option value="2 Passengers">2</option>
+                                    <option value="3 Passengers">3</option>
+                                    <option value="4 Passengers">4</option>
                                 </select>
                             </div>
                         </div>
@@ -256,99 +256,6 @@
                 </div>
                 <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp">
                     <img src="img/rooms/2.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Locations (was Rooms but changed) -->
-    <section class="rooms1 section-padding bg-cream" data-scroll-index="1">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-subtitle">The Attentive Luxury Airline</div>
-                    <div class="section-title">Our Destinations</div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="item">
-                        <div class="position-re o-hidden"> <img src="img/cities/newyork.jpg" alt=""> </div> <span
-                            class="category"><a href="room-details.html">Book</a></span>
-                        <div class="con">
-                            <h5><a href="room-details.html">New York City</a> </h5>
-                            <div class="line"></div>
-                            <div class="row facilities">
-                                <div class="col col-md-12 text-right">
-                                    <div class="permalink"><a href="room-details.html">Details <i
-                                                class="ti-arrow-right"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="item">
-                        <div class="position-re o-hidden"> <img src="img/cities/miami.jpg" alt=""> </div> <span
-                            class="category"><a href="room-details.html">Book</a></span>
-                        <div class="con">
-                            <h5><a href="room-details.html">Miami</a></h5>
-                            <div class="line"></div>
-                            <div class="row facilities">
-                                <div class="col col-md-12 text-right">
-                                    <div class="permalink"><a href="room-details.html">Details <i
-                                                class="ti-arrow-right"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="item">
-                        <div class="position-re o-hidden"> <img src="img/cities/london.jpg" alt=""> </div> <span
-                            class="category"><a href="room-details.html">Book</a></span>
-                        <div class="con">
-                            <h5><a href="room-details.html">London</a></h5>
-                            <div class="line"></div>
-                            <div class="row facilities">
-                                <div class="col col-md-12 text-right">
-                                    <div class="permalink"><a href="room-details.html">Details <i
-                                                class="ti-arrow-right"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="item">
-                        <div class="position-re o-hidden"> <img src="img/cities/mexicocity.jpg" alt=""> </div> <span
-                            class="category"><a href="room-details.html">Book</a></span>
-                        <div class="con">
-                            <h5><a href="room-details.html">Mexico City</a></h5>
-                            <div class="line"></div>
-                            <div class="row facilities">
-                                <div class="col col-md-12 text-right">
-                                    <div class="permalink"><a href="room-details.html">Details <i
-                                                class="ti-arrow-right"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="item">
-                        <div class="position-re o-hidden"> <img src="img/cities/sydney.jpg" alt=""> </div> <span
-                            class="category"><a href="room-details.html">Book</a></span>
-                        <div class="con">
-                            <h5><a href="room-details.html">Sydney</a></h5>
-                            <div class="line"></div>
-                            <div class="row facilities">
-                                <div class="col col-md-12 text-right">
-                                    <div class="permalink"><a href="room-details.html">Details <i
-                                                class="ti-arrow-right"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

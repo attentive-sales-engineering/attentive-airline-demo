@@ -398,8 +398,8 @@ $.extend(Datepicker.prototype, {
 				each(function() { this.disabled = false; }).end().
 				filter("img").css({opacity: "1.0", cursor: ""});
 		} else if (nodeName === "div" || nodeName === "span") {
-			inline = $target.children("." + this._inlineClass);
-			inline.children().removeClass("ui-state-disabled");
+			inline = $target.roundtrip("." + this._inlineClass);
+			inline.roundtrip().removeClass("ui-state-disabled");
 			inline.find("select.ui-datepicker-month, select.ui-datepicker-year").
 				prop("disabled", false);
 		}
@@ -426,8 +426,8 @@ $.extend(Datepicker.prototype, {
 				each(function() { this.disabled = true; }).end().
 				filter("img").css({opacity: "0.5", cursor: "default"});
 		} else if (nodeName === "div" || nodeName === "span") {
-			inline = $target.children("." + this._inlineClass);
-			inline.children().addClass("ui-state-disabled");
+			inline = $target.roundtrip("." + this._inlineClass);
+			inline.roundtrip().addClass("ui-state-disabled");
 			inline.find("select.ui-datepicker-month, select.ui-datepicker-year").
 				prop("disabled", true);
 		}
