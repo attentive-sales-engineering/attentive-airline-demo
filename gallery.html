@@ -50,11 +50,11 @@
                     <li class="nav-item dropdown"> <span class="nav-link"> Our Destinations <i
                                 class="ti-angle-down"></i></span>
                         <ul class="dropdown-menu last">
-                            <li class="dropdown-item active"><a href="newyork.html">New York</a></li>
-                            <li class="dropdown-item"><a href="miami.html">Miami</a></li>
-                            <li class="dropdown-item"><a href="london.html">London</a></li>
-                            <li class="dropdown-item"><a href="mexicocity.html">Mexico City</a></li>
-                            <li class="dropdown-item"><a href="sydney.html">Sydney</a></li>
+                            <li class="dropdown-item active"><a href="newyork.html">New York (LGA)</a></li>
+                            <li class="dropdown-item"><a href="miami.html">Miami (MIA)</a></li>
+                            <li class="dropdown-item"><a href="london.html">London (LHR)</a></li>
+                            <li class="dropdown-item"><a href="mexicocity.html">Mexico City (MEX)</a></li>
+                            <li class="dropdown-item"><a href="sydney.html">Sydney (SYD)</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -237,70 +237,102 @@
                         <p><i class="ti-check"></i><small>text us, it's toll-free.</small></p>
                     </div>
                     <!-- Booking From -->
-                    <div class="col-md-5 offset-md-2">
-                        <div class="booking-box">
-                            <div class="head-box">
-                                <h6>Rooms & Suites</h6>
-                                <h4>Airline Booking Form</h4>
-                            </div>
-                            <div class="booking-inner clearfix">
-                                <form action="rooms2.html" class="form1 clearfix">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="input1_wrapper">
-                                                <label>Check in</label>
-                                                <div class="input1_inner">
-                                                    <input type="text" class="form-control input datepicker"
-                                                        placeholder="Check in">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="input1_wrapper">
-                                                <label>Check out</label>
-                                                <div class="input1_inner">
-                                                    <input type="text" class="form-control input datepicker"
-                                                        placeholder="Check out">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
+                <div class="col-md-8 offset-md-2">
+                    <div class="booking-box">
+                        <div class="head-box">
+                            <h6>Flight</h6>
+                            <h4>Book Now</h4>
+                        </div>
+                        <div class="booking-inner clearfix">
+                            <form action="booking.html" class="form1 clearfix">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input1_wrapper">
+                                            <label>From</label>
                                             <div class="select1_wrapper">
-                                                <label>Passengers</label>
                                                 <div class="select1_inner">
-                                                    <select class="select2 select" style="width: 100%">
-                                                        <option value="0">Passengers</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
+                                                    <select id="departureCity" class="select2 select" style="width: 100%">
+                                                        <option value="">From</option>
+                                                        <option value="New York (LGA)">New York (LGA)</option>
+                                                        <option value="Miami (MIA)">Miami (MIA)</option>
+                                                        <option value="London (LHR)">London (LHR)</option>
+                                                        <option value="Mexico City (MEX)">Mexico City (MEX)</option>
+                                                        <option value="Sydney (SYD)">Sydney (SYD)</option>
                                                     </select>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="select1_wrapper">
-                                                <label>Children</label>
-                                                <div class="select1_inner">
-                                                    <select class="select2 select" style="width: 100%">
-                                                        <option value="0">Children</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <button type="submit" class="btn-form1-submit mt-15">Check
-                                                Availability</button>
                                         </div>
                                     </div>
-                                </form>
-                            </div>
+                                    <div class="col-md-12">
+                                        <div class="input1_wrapper">
+                                            <label>To</label>
+                                            <div class="select1_wrapper">
+                                                <div class="select1_inner">
+                                                    <select id="returnCity" class="select2 select" style="width: 100%">
+                                                        <option value="">To</option>
+                                                        <option value="New York (LGA)">New York (LGA)</option>
+                                                        <option value="Miami (MIA)">Miami (MIA)</option>
+                                                        <option value="London (LHR)">London (LHR)</option>
+                                                        <option value="Mexico City (MEX)">Mexico City (MEX)</option>
+                                                        <option value="Sydney (SYD)">Sydney (SYD)</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input1_wrapper">
+                                            <label>Departure</label>
+                                            <div class="input1_inner">
+                                                <input id="departureDate" type="text" class="form-control input datepicker"
+                                                    placeholder="Departure">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input1_wrapper">
+                                            <label>Return</label>
+                                            <div class="input1_inner">
+                                                <input id="returnDate" type="text" class="form-control input datepicker"
+                                                    placeholder="Return">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="select1_wrapper">
+                                            <label>Passengers</label>
+                                            <div class="select1_inner">
+                                                <select id="passengers" class="select2 select" style="width: 100%">
+                                                    <option value="">Passengers</option>
+                                                    <option value="1 Passenger">1</option>
+                                                    <option value="2 Passengers">2</option>
+                                                    <option value="3 Passengers">3</option>
+                                                    <option value="4 Passengers">4</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="select1_wrapper">
+                                            <label>Round Trip</label>
+                                            <div class="select1_inner">
+                                                <select id="roundtrip" class="select2 select" style="width: 100%">
+                                                    <option value="">Round Trip</option>
+                                                    <option value="Round Trip">Round Trip</option>
+                                                    <option value="One Way">One Way</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button id="addToCart" type="submit" class="btn-form1-submit mt-15">Book
+                                            Now</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -362,7 +394,7 @@
                     <div class="col-md-4">
                         <div class="footer-column footer-contact">
                             <h3 class="footer-title">Contact</h3>
-                            <p class="footer-contact-text">1616 Broadway NY, New York 10001<br>United States of America
+                            <p class="footer-contact-text">221 River St, Hoboken, New Jersey 07030<br>United States of America
                             </p>
                             <div class="footer-contact-info">
                                 <p class="footer-contact-phone"><span class="flaticon-call"></span> 833 461 3262</p>
