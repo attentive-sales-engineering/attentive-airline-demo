@@ -143,30 +143,42 @@
         <div class="container">
             <div class="booking-inner clearfix">
                 <form action="booking.html" class="form1 clearfix">
-                    <div class="col1 c1">
-                        <div class="input1_wrapper">
-                            <label>Check in</label>
-                            <div class="input1_inner">
-                                <input id="checkIn" type="text" class="form-control input datepicker"
-                                    placeholder="Check in">
+                    <div class="col2 c1">
+                        <div class="select1_wrapper">
+                            <label>Round Trip</label>
+                            <div class="select1_inner">
+                                <select id="adults" class="select2 select" style="width: 100%">
+                                    <option value="">Round Trip</option>
+                                    <option value="1 Adult">Round Trip</option>
+                                    <option value="2 Adults">One Way</option>
+                                </select>
                             </div>
                         </div>
                     </div>
                     <div class="col1 c2">
                         <div class="input1_wrapper">
-                            <label>Check out</label>
+                            <label>Departure</label>
                             <div class="input1_inner">
-                                <input id="checkOut" type="text" class="form-control input datepicker"
-                                    placeholder="Check out">
+                                <input id="checkIn" type="text" class="form-control input datepicker"
+                                    placeholder="Departure">
                             </div>
                         </div>
                     </div>
-                    <div class="col2 c3">
+                    <div class="col1 c3">
+                        <div class="input1_wrapper">
+                            <label>Return</label>
+                            <div class="input1_inner">
+                                <input id="checkOut" type="text" class="form-control input datepicker"
+                                    placeholder="Return">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col2 c4">
                         <div class="select1_wrapper">
-                            <label>Location</label>
+                            <label>From</label>
                             <div class="select1_inner">
                                 <select id="city" class="select2 select" style="width: 100%">
-                                    <option value="">Location</option>
+                                    <option value="">From</option>
                                     <option value="New York">New York</option>
                                     <option value="Miami">Miami</option>
                                     <option value="London">London</option>
@@ -176,35 +188,36 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col2 c4">
-                        <div class="select1_wrapper">
-                            <label>Adults</label>
-                            <div class="select1_inner">
-                                <select id="adults" class="select2 select" style="width: 100%">
-                                    <option value="">Adults</option>
-                                    <option value="1 Adult">1 Adult</option>
-                                    <option value="2 Adults">2 Adults</option>
-                                    <option value="3 Adults">3 Adults</option>
-                                    <option value="4 Adults">4 Adults</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
                     <div class="col2 c5">
                         <div class="select1_wrapper">
-                            <label>Children</label>
+                            <label>To</label>
                             <div class="select1_inner">
-                                <select id="children" class="select2 select" style="width: 100%">
-                                    <option value="">Children</option>
-                                    <option value="1 Child">1 Child</option>
-                                    <option value="2 Children">2 Children</option>
-                                    <option value="3 Children">3 Children</option>
-                                    <option value="4 Children">4 Children</option>
+                                <select id="city" class="select2 select" style="width: 100%">
+                                    <option value="">To</option>
+                                    <option value="New York">New York</option>
+                                    <option value="Miami">Miami</option>
+                                    <option value="London">London</option>
+                                    <option value="Mexico City">Mexico City</option>
+                                    <option value="Sydney">Sydney</option>
                                 </select>
                             </div>
                         </div>
                     </div>
-                    <div class="col3 c6">
+                    <div class="col2 c6">
+                        <div class="select1_wrapper">
+                            <label>Passengers</label>
+                            <div class="select1_inner">
+                                <select id="adults" class="select2 select" style="width: 100%">
+                                    <option value="">Passengers</option>
+                                    <option value="1 Adult">1</option>
+                                    <option value="2 Adults">2</option>
+                                    <option value="3 Adults">3</option>
+                                    <option value="4 Adults">4</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col4 c6">
                         <button id="addToCart" type="submit" class="btn-form1-submit">Book Now</button>
                     </div>
                 </form>
