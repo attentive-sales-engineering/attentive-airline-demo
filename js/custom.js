@@ -15,8 +15,8 @@
 11. News owlCarousel
 12. Team owlCarousel
 13. Clients owlCarousel
-14. Restaurant Menu owlCarousel
-15. Restaurant Menu Tabs
+14. My Trips Menu owlCarousel
+15. My Trips Menu Tabs
 16. Accordion Box (for Faqs)
 17. MagnificPopup Gallery
 18. Smooth Scrolling
@@ -332,7 +332,7 @@ $(function () {
         }
     });
     
-    // Restaurant Menu owlCarousel
+    // My Trips Menu owlCarousel
     $('.restaurant-menu .owl-carousel').owlCarousel({
         loop: true,
         margin: 0,
@@ -356,7 +356,7 @@ $(function () {
         }
     });
     
-    // Restaurant Menu Tabs
+    // My Trips Menu Tabs
     $(".restaurant-menu .tabs-icon").on("click", ".item", function () {
         $(".item").removeClass("active");
         var myID = $(this).attr("id");
