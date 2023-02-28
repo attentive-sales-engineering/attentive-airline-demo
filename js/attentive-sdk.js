@@ -10,7 +10,7 @@ $(document).ready(function () {
   // console.log('get lastName:', lastName)
   const lastNameElement = document.querySelector('#lastName')
 
-  let email = localStorage.getItem('email') || 'fred@attentive.com'
+  let email = localStorage.getItem('email') || 'demo@attentive.com'
   // console.log('get email:', email)
   const emailElement = document.querySelector('#email')
 
@@ -18,9 +18,13 @@ $(document).ready(function () {
   // console.log('get phone:', phone)
   const phoneElement = document.querySelector('#phone')
 
-  let city = localStorage.getItem('city') || 'New York'
-  // console.log('get city:', city)
-  const cityElement = document.querySelector('#city')
+  let departureCity = localStorage.getItem('departureCity') || 'New York'
+  // console.log('get departureCity:', departureCity)
+  const departureCityElement = document.querySelector('#departureCity')
+
+  let returnCity = localStorage.getItem('returnCity') || 'Mexico City'
+  // console.log('get returnCity:', returnCity)
+  const returnCityElement = document.querySelector('#returnCity')
 
   //sets default check-in to today + 7 days
   let departureDate = new Date()
@@ -31,10 +35,10 @@ $(document).ready(function () {
   // console.log('get departure:', departure)
   const departureElement = document.querySelector('#departure')
 
-  //sets default check-in to today + 8 days
+  //sets default check-in to today + 14 days
   let returnDate = new Date()
-  returnDate.setDate(returnDate.getDate() + 8)
-  let return =
+  returnDate.setDate(returnDate.getDate() + 14)
+  let returnVar =
     localStorage.getItem('return') || returnDate.toLocaleDateString()
   // console.log('get return:', return)
   const returnElement = document.querySelector('#return')
@@ -109,7 +113,7 @@ $(document).ready(function () {
     if (phoneElement) phoneElement.value = phone
     if (cityElement) cityElement.value = city
     if (departureElement) departureElement.value = departure
-    if (returnElement) returnElement.value = return
+    if (returnElement) returnElement.value = returnVar
     if (passengersElement) passengersElement.value = passengers
     if (roundtripElement) roundtripElement.value = roundtrip
   }
