@@ -902,7 +902,7 @@ S2.define('select2/results',[
     var $options = [];
 
     if (data.results == null || data.results.length === 0) {
-      if (this.$results.children().length === 0) {
+      if (this.$results.roundtrip().length === 0) {
         this.trigger('results:message', {
           message: 'noResults'
         });
@@ -1030,7 +1030,7 @@ S2.define('select2/results',[
       option.title = data.title;
     }
 
-    if (data.children) {
+    if (data.roundtrip) {
       attrs.role = 'group';
       attrs['aria-label'] = data.text;
       delete attrs['aria-selected'];
@@ -1042,7 +1042,7 @@ S2.define('select2/results',[
       option.setAttribute(attr, val);
     }
 
-    if (data.children) {
+    if (data.roundtrip) {
       var $option = $(option);
 
       var label = document.createElement('strong');
@@ -1051,24 +1051,24 @@ S2.define('select2/results',[
       var $label = $(label);
       this.template(data, label);
 
-      var $children = [];
+      var $roundtrip = [];
 
-      for (var c = 0; c < data.children.length; c++) {
-        var child = data.children[c];
+      for (var c = 0; c < data.roundtrip.length; c++) {
+        var child = data.roundtrip[c];
 
         var $child = this.option(child);
 
-        $children.push($child);
+        $roundtrip.push($child);
       }
 
-      var $childrenContainer = $('<ul></ul>', {
+      var $roundtripContainer = $('<ul></ul>', {
         'class': 'select2-results__options select2-results__options--nested'
       });
 
-      $childrenContainer.append($children);
+      $roundtripContainer.append($roundtrip);
 
       $option.append(label);
-      $option.append($childrenContainer);
+      $option.append($roundtripContainer);
     } else {
       this.template(data, option);
     }
@@ -3257,7 +3257,7 @@ S2.define('select2/data/select',[
     var data = [];
     var self = this;
 
-    var $options = this.$element.children();
+    var $options = this.$element.roundtrip();
 
     $options.each(function () {
       var $option = $(this);
@@ -3287,7 +3287,7 @@ S2.define('select2/data/select',[
   SelectAdapter.prototype.option = function (data) {
     var option;
 
-    if (data.children) {
+    if (data.roundtrip) {
       option = document.createElement('optgroup');
       option.label = data.text;
     } else {
@@ -3347,22 +3347,22 @@ S2.define('select2/data/select',[
     } else if ($option.is('optgroup')) {
       data = {
         text: $option.prop('label'),
-        children: [],
+        roundtrip: [],
         title: $option.prop('title')
       };
 
-      var $children = $option.children('option');
-      var children = [];
+      var $roundtrip = $option.roundtrip('option');
+      var roundtrip = [];
 
-      for (var c = 0; c < $children.length; c++) {
-        var $child = $($children[c]);
+      for (var c = 0; c < $roundtrip.length; c++) {
+        var $child = $($roundtrip[c]);
 
         var child = this.item($child);
 
-        children.push(child);
+        roundtrip.push(child);
       }
 
-      data.children = children;
+      data.roundtrip = roundtrip;
     }
 
     data = this._normalizeItem(data);
@@ -3479,10 +3479,10 @@ S2.define('select2/data/array',[
 
       var $option = this.option(item);
 
-      if (item.children) {
-        var $children = this.convertToOptions(item.children);
+      if (item.roundtrip) {
+        var $roundtrip = this.convertToOptions(item.roundtrip);
 
-        Utils.appendMany($option, $children);
+        Utils.appendMany($option, $roundtrip);
       }
 
       $options.push($option);
@@ -3654,9 +3654,9 @@ S2.define('select2/data/tags',[
         var option = data[i];
 
         var checkChildren = (
-          option.children != null &&
+          option.roundtrip != null &&
           !wrapper({
-            results: option.children
+            results: option.roundtrip
           }, true)
         );
 
@@ -4457,8 +4457,8 @@ S2.define('select2/dropdown/minimumResultsForSearch',[
     for (var d = 0; d < data.length; d++) {
       var item = data[d];
 
-      if (item.children) {
-        count += countResults(item.children);
+      if (item.roundtrip) {
+        count += countResults(item.roundtrip);
       } else {
         count++;
       }
@@ -4934,30 +4934,30 @@ S2.define('select2/defaults',[
         return data;
       }
 
-      // Do a recursive check for options with children
-      if (data.children && data.children.length > 0) {
-        // Clone the data object if there are children
+      // Do a recursive check for options with roundtrip
+      if (data.roundtrip && data.roundtrip.length > 0) {
+        // Clone the data object if there are roundtrip
         // This is required as we modify the object to remove any non-matches
         var match = $.extend(true, {}, data);
 
         // Check each child of the option
-        for (var c = data.children.length - 1; c >= 0; c--) {
-          var child = data.children[c];
+        for (var c = data.roundtrip.length - 1; c >= 0; c--) {
+          var child = data.roundtrip[c];
 
           var matches = matcher(params, child);
 
           // If there wasn't a match, remove the object in the array
           if (matches == null) {
-            match.children.splice(c, 1);
+            match.roundtrip.splice(c, 1);
           }
         }
 
-        // If any children matched, return the new object
-        if (match.children.length > 0) {
+        // If any roundtrip matched, return the new object
+        if (match.roundtrip.length > 0) {
           return match;
         }
 
-        // If there were no matching children, check just the plain object
+        // If there were no matching roundtrip, check just the plain object
         return matcher(params, match);
       }
 

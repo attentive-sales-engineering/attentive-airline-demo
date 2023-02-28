@@ -95,7 +95,7 @@ var _mfpOn = function(name, f) {
 		return mfp.currTemplate.closeBtn;
 	},
 	// Initialize Magnific Popup only when called at least once
-	_checkInstance = function() {
+	_departurestance = function() {
 		if(!$.magnificPopup.instance) {
 			/*jshint -W020 */
 			mfp = new MagnificPopup();
@@ -827,7 +827,7 @@ $.magnificPopup = {
 	modules: [],
 
 	open: function(options, index) {
-		_checkInstance();
+		_departurestance();
 
 		if(!options) {
 			options = {};
@@ -907,7 +907,7 @@ $.magnificPopup = {
 
 
 $.fn.magnificPopup = function(options) {
-	_checkInstance();
+	_departurestance();
 
 	var jqEl = $(this);
 
@@ -1857,4 +1857,4 @@ $.magnificPopup.registerModule(RETINA_NS, {
 });
 
 /*>>retina*/
- _checkInstance(); }));
+ _departurestance(); }));
