@@ -18,36 +18,36 @@ $(document).ready(function () {
   // console.log('get phone:', phone)
   const phoneElement = document.querySelector('#phone')
 
-  let departureCity = localStorage.getItem('departureCity') || 'New York'
+  let departureCity = localStorage.getItem('departureCity') || 'New York (LGA)'
   // console.log('get departureCity:', departureCity)
   const departureCityElement = document.querySelector('#departureCity')
 
-  let returnCity = localStorage.getItem('returnCity') || 'Mexico City'
+  let returnCity = localStorage.getItem('returnCity') || 'Mexico City (MEX)'
   // console.log('get returnCity:', returnCity)
   const returnCityElement = document.querySelector('#returnCity')
 
-  //sets default check-in to today + 7 days
-  let departureDate = new Date()
-  departureDate.setDate(departureDate.getDate() + 7)
-  let departure =
-    localStorage.getItem('departure') || departureDate.toLocaleDateString()
+  //sets default departure date to today + 7 days
+  let departureDateVar = new Date()
+  departureDateVar.setDate(departureDateVar.getDate() + 7)
+  let departureDate =
+    localStorage.getItem('departureDate') || departureDateVar.toLocaleDateString()
 
   // console.log('get departure:', departure)
-  const departureElement = document.querySelector('#departure')
+  const departureDateElement = document.querySelector('#departureDate')
 
-  //sets default check-in to today + 14 days
-  let returnDate = new Date()
-  returnDate.setDate(returnDate.getDate() + 14)
-  let returnVar =
-    localStorage.getItem('return') || returnDate.toLocaleDateString()
+  //sets default return date to today + 14 days
+  let returnDateVar = new Date()
+  returnDateVar.setDate(returnDateVar.getDate() + 14)
+  let returnDate =
+    localStorage.getItem('returnDate') || returnDateVar.toLocaleDateString()
   // console.log('get return:', return)
-  const returnElement = document.querySelector('#return')
+  const returnDateElement = document.querySelector('#returnDate')
 
   let passengers = localStorage.getItem('passengers') || '1 Passenger'
   // console.log('get passengers:', passengers)
   const passengersElement = document.querySelector('#passengers')
 
-  let roundtrip = localStorage.getItem('roundtrip') || ''
+  let roundtrip = localStorage.getItem('roundtrip') || 'Round Trip'
   // console.log('get roundtrip:', roundtrip)
   const roundtripElement = document.querySelector('#roundtrip')
 
@@ -72,29 +72,38 @@ $(document).ready(function () {
         'e.data.__attentive.metadata: ' +
           JSON.stringify(e.data.__attentive.metadata, null, 2)
       )
-      // CITY
-      if (e.data.__attentive.metadata['Preferred Location']) {
+      // FIRST NAME
+      if (e.data.__attentive.metadata['First Name']) {
         console.log(
-          'e.data.__attentive.metadata["Preferred Location"]: ' +
-            e.data.__attentive.metadata['Preferred Location']
+          'e.data.__attentive.metadata["First Name"]: ' +
+            e.data.__attentive.metadata['First Name']
         )
-        city = e.data.__attentive.metadata['Preferred Location']
-        localStorage.setItem('city', city)
+        returnCity = e.data.__attentive.metadata['First Name']
+        localStorage.setItem('firstName', firstName)
+      }
+      // LAST NAME
+      if (e.data.__attentive.metadata['Last Name']) {
+        console.log(
+          'e.data.__attentive.metadata["Last Name"]: ' +
+            e.data.__attentive.metadata['Last Name']
+        )
+        returnCity = e.data.__attentive.metadata['Last Name']
+        localStorage.setItem('lastName', firstName)
       }
     }
     // console.log('e.data: ' + JSON.stringify(e.data, null, 2))
   })
 
-  if (window.location.pathname.match('room-details')) {
+  if (window.location.pathname.match('flight-details')) {
     console.log('ROOM DETAILS PAGE -> PRODUCT VIEW SDK')
     window.attentive.analytics.productView({
       items: [
         {
-          productId: 'ny-js-1',
-          productVariantId: 'ny-js-2',
-          name: 'New York - Junior Suite',
+          productId: 'ny-mx-2',
+            productVariantId: 'ny-mx-2b',
+            name: 'New York (LGA) - Mexico - Round Trip',
           price: {
-            value: '399',
+            value: '1499',
             currency: 'USD'
           }
         }
@@ -111,9 +120,10 @@ $(document).ready(function () {
     if (lastNameElement) lastNameElement.value = lastName
     if (emailElement) emailElement.value = email
     if (phoneElement) phoneElement.value = phone
-    if (cityElement) cityElement.value = city
-    if (departureElement) departureElement.value = departure
-    if (returnElement) returnElement.value = returnVar
+    if (departureCityElement) departureCityElement.value = departureCity
+    if (returnCityElement) returnCityElement.value = returnCity
+    if (departureDateElement) departureDateElement.value = departureDate
+    if (returnDateElement) returnDateElement.value = returnDate
     if (passengersElement) passengersElement.value = passengers
     if (roundtripElement) roundtripElement.value = roundtrip
   }
@@ -122,12 +132,13 @@ $(document).ready(function () {
   $('button[type="submit"').click(function () {
     if (
       window.location.pathname.match('index') ||
-      window.location.pathname.match('room-details')
+      window.location.pathname.match('flight-details')
     ) {
       console.log('SET LOCAL STORAGE')
-      localStorage.setItem('city', cityElement.value)
-      localStorage.setItem('departure', departureElement.value)
-      localStorage.setItem('return', returnElement.value)
+      localStorage.setItem('departureCity', departureCityElement.value)
+      localStorage.setItem('returnCity', returnCityElement.value)
+      localStorage.setItem('departureDate', departureDateElement.value)
+      localStorage.setItem('returnDate', returnDateElement.value)
       localStorage.setItem('passengers', passengersElement.value)
       localStorage.setItem('roundtrip', roundtripElement.value)
       // ADD TO CART SDK
@@ -135,11 +146,11 @@ $(document).ready(function () {
       window.attentive.analytics.addToCart({
         items: [
           {
-            productId: 'ny-js-1',
-            productVariantId: 'ny-js-2',
-            name: 'New York - Junior Suite',
+            productId: 'ny-mx-2',
+            productVariantId: 'ny-mx-2b',
+            name: 'New York (LGA) - Mexico - Round Trip',
             price: {
-              value: '399',
+              value: '1499',
               currency: 'USD'
             }
           }
@@ -154,11 +165,11 @@ $(document).ready(function () {
       window.attentive.analytics.purchase({
         items: [
           {
-            productId: 'ny-js-1',
-            productVariantId: 'ny-js-2',
-            name: 'New York - Junior Suite',
+            productId: 'ny-mx-2',
+            productVariantId: 'ny-mx-2b',
+            name: 'New York (LGA) - Mexico - Round Trip',
             price: {
-              value: '399',
+              value: '1499',
               currency: 'USD'
             }
           }
