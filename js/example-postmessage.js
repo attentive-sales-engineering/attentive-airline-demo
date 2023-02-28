@@ -1,7 +1,7 @@
 const data = {
   __attentive: {
     action: 'LEAD',
-    attnDomain: 'attentivehoteldemo.attn.tv',
+    attnDomain: 'attentiveairlinedemo.attn.tv',
     attentiveAPI: 'https: //api.attentivemobile.com',
     impressionId: '0',
     creativeId: '380718',

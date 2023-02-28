@@ -1,4 +1,4 @@
-# attentive-hotel-demo
+# attentive-airline-demo
  Example website integrated with Attentive messaging
 
 - [Documentation](Documentation/index.html)

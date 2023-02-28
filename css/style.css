@@ -19,7 +19,7 @@
  17. Rooms 3 style
  18. Rooms Page style
  19. Services style
- 20. Restaurant Menu style
+ 20. My Trips Menu style
  21. Facilties style
  22. Clients style
  23. Gallery style
@@ -3040,7 +3040,7 @@ hr {
 }
 
 
-/* =======  Restaurant Menu style ======= */
+/* =======  My Trips Menu style ======= */
 .restaurant-menu .owl-carousel .owl-stage-outer {
     padding: 20px 0 60px 0;
 }
