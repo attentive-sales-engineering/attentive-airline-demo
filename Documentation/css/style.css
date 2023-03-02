@@ -35,11 +35,11 @@ p i {
     font-style: normal;
 }
 a {
-    color: #deba28;
+    color: #F9D100;
     text-decoration: none;
 }
 a:hover {
-    color: #deba28;
+    color: #F9D100;
     text-decoration: underline;
 }
 ol,
@@ -61,12 +61,12 @@ li:before {
     display: inline-block;
     margin-left: -1.5em;
     width: 1.5em;
-    color: #deba28;
+    color: #F9D100;
 }
 b,
 strong {
     font-weight: 500;
-    color: #deba28;
+    color: #F9D100;
     font-size: 17px;
 }
 hr {
@@ -169,7 +169,7 @@ footer p {
     border-radius: 6px;
     background-repeat: no-repeat;
     background-position: center 15px;
-    background-color: #deba28;
+    background-color: #F9D100;
     z-index: 999;
     padding: 20px 0;
     position: fixed;
