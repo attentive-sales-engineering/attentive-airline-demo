@@ -78,7 +78,7 @@ $(document).ready(function () {
           'e.data.__attentive.metadata["First Name"]: ' +
             e.data.__attentive.metadata['First Name']
         )
-        returnCity = e.data.__attentive.metadata['First Name']
+        firstName = e.data.__attentive.metadata['First Name']
         localStorage.setItem('firstName', firstName)
       }
       // LAST NAME
@@ -87,8 +87,17 @@ $(document).ready(function () {
           'e.data.__attentive.metadata["Last Name"]: ' +
             e.data.__attentive.metadata['Last Name']
         )
-        returnCity = e.data.__attentive.metadata['Last Name']
-        localStorage.setItem('lastName', firstName)
+        lastName = e.data.__attentive.metadata['Last Name']
+        localStorage.setItem('lastName', lastName)
+      }
+      // PREFERRED DESTINATION
+      if (e.data.__attentive.metadata['Preferred Destination']) {
+        console.log(
+          'e.data.__attentive.metadata["Preferred Destination"]: ' +
+            e.data.__attentive.metadata['Preferred Destination']
+        )
+        returnCity = e.data.__attentive.metadata['Preferred Destination']
+        localStorage.setItem('returnCity', returnCity)
       }
     }
     // console.log('e.data: ' + JSON.stringify(e.data, null, 2))
