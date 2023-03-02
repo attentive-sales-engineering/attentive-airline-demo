@@ -1,7 +1,5 @@
 # attentive-airline-demo
- Example website integrated with Attentive messaging
+This is a branded hotel environment integrated with the Attentive SMS platform.
 
-- [Documentation](Documentation/index.html)
-- [demo1](demo1/index.html)
+Click the link below to access the website: [DEMO](https://johnchaffee.github.io/attentive-airline-demo/index.html)
 
-hello world
