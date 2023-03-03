@@ -90,6 +90,15 @@ $(document).ready(function () {
         lastName = e.data.__attentive.metadata['Last Name']
         localStorage.setItem('lastName', lastName)
       }
+      // HOME CITY
+      if (e.data.__attentive.metadata['Home City']) {
+        console.log(
+          'e.data.__attentive.metadata["Home City"]: ' +
+            e.data.__attentive.metadata['Home City']
+        )
+        departureCity = e.data.__attentive.metadata['Home City']
+        localStorage.setItem('departureCity', departureCity)
+      }
       // PREFERRED DESTINATION
       if (e.data.__attentive.metadata['Preferred Destination']) {
         console.log(
