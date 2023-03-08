@@ -1,9 +1,9 @@
 # attentive-airline-demo
-This is a branded airlines demo environment integrated with the Attentive SMS platform. 
+This is a branded airline demo environment integrated with the Attentive SMS platform. 
 
 Click the link below to view the website:
 
-- [Attentive Hotel Demo](https://attentive-sales-engineering.github.io/attentive-airlines-demo/index.html)
+- [Attentive Airline Demo](https://attentive-sales-engineering.github.io/attentive-airline-demo/)
 
 To experience the demo via SMS:
 
